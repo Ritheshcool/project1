@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Bava's Restaurant Agaramthen - Order Online & Save 30%! Best South Indian Food. Free Delivery.">
-    <title>Bava's Restaurant - Order Online | Agaramthen, Chennai</title>
+    <meta name="description" content="Bava's Restaurant Agaramthen - Indian, Chinese, Arabian, Tandoor. Order Online & Save 30%! Free Delivery.">
+    <title>Bava's Restaurant - Indian | Chinese | Arabian | Tandoor | Agaramthen</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,8 +21,9 @@
         }
 
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E55025;
+            --primary: #FFA500;
+            --primary-dark: #FF8C00;
+            --golden: #FFD700;
             --secondary: #2C3E50;
             --success: #27AE60;
             --warning: #F39C12;
@@ -49,18 +50,19 @@
 
         /* Announcement Bar */
         .announcement {
-            background: linear-gradient(90deg, #FF6B35, #F39C12);
+            background: linear-gradient(90deg, #FF6B35, #FFD700);
             color: white;
             padding: 8px 10px;
             text-align: center;
             font-size: 12px;
             font-weight: 600;
             animation: pulse 2s infinite;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            50% { opacity: 0.9; }
         }
 
         /* Header */
@@ -77,27 +79,55 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 15px;
+            padding: 10px 15px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
         }
 
-        .logo img {
-            width: 40px;
-            height: 40px;
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: #2C3E50;
             border-radius: 50%;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-icon::before {
+            content: '🔥';
+            font-size: 24px;
+            position: absolute;
         }
 
         .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-text .restaurant-name {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        .logo-text .tagline {
+            font-size: 9px;
+            color: #666;
+            margin-top: -2px;
+            letter-spacing: 0.5px;
         }
 
         .header-actions {
@@ -117,6 +147,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            box-shadow: 0 2px 5px rgba(39,174,96,0.3);
         }
 
         .cart-btn {
@@ -141,7 +172,7 @@
             font-weight: 600;
         }
 
-        /* Hero Section - Irresistible Opening */
+        /* Hero Section with Grilled Chicken Background */
         .hero {
             position: relative;
             width: 100%;
@@ -149,7 +180,7 @@
             min-height: 500px;
             overflow: hidden;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
-                        url('https://images.unsplash.com/photo-1630492782892-74eeb74f2f8f?w=800') center/cover;
+                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800') center/cover;
         }
 
         .hero-content {
@@ -160,6 +191,7 @@
             text-align: center;
             width: 90%;
             color: white;
+            z-index: 2;
         }
 
         .offer-badge {
@@ -215,7 +247,7 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+            box-shadow: 0 4px 15px rgba(255,165,0,0.4);
         }
 
         .btn-secondary {
@@ -236,7 +268,7 @@
 
         .hero-feature i {
             font-size: 24px;
-            color: var(--warning);
+            color: var(--golden);
             margin-bottom: 5px;
         }
 
@@ -274,7 +306,8 @@
 
         .offer-image {
             width: 120px;
-            background: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300') center/cover;
+            background-size: cover;
+            background-position: center;
         }
 
         .offer-content {
@@ -455,7 +488,7 @@
         .feature i {
             font-size: 36px;
             margin-bottom: 10px;
-            color: var(--warning);
+            color: var(--golden);
         }
 
         .feature h3 {
@@ -474,6 +507,7 @@
             color: white;
             padding: 25px 15px;
             text-align: center;
+            margin-bottom: 60px;
         }
 
         .footer-info {
@@ -483,7 +517,7 @@
         .footer-info h3 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: var(--primary);
+            color: var(--golden);
         }
 
         .footer-info p {
@@ -731,8 +765,11 @@
     <header>
         <div class="header-content">
             <a href="#" class="logo">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF6B35, #F39C12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">B</div>
-                <span class="logo-text">Bava's</span>
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span class="restaurant-name">Bava's</span>
+                    <span class="tagline">Indian • Chinese • Arabian • Tandoor</span>
+                </div>
             </a>
             <div class="header-actions">
                 <a href="tel:+919876543210" class="call-btn">
@@ -747,7 +784,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - Eye-Catching Opening -->
+    <!-- Hero Section with Grilled Chicken Background -->
     <section class="hero">
         <div class="hero-content">
             <div class="offer-badge">LIMITED TIME: 30% OFF</div>
@@ -785,11 +822,11 @@
         <h2 class="section-title">🎁 Today's Special Offers</h2>
         <div class="offers-grid">
             <div class="offer-card">
-                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1589647363585-f4a7d3877b10?w=300')"></div>
+                <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300')"></div>
                 <div class="offer-content">
-                    <div class="offer-title">Family Meal Deal</div>
+                    <div class="offer-title">Grilled Chicken Special</div>
                     <div class="offer-discount">Save ₹150</div>
-                    <div class="offer-code">Code: FAMILY30</div>
+                    <div class="offer-code">Code: GRILL30</div>
                 </div>
             </div>
             <div class="offer-card">
@@ -809,11 +846,11 @@
         
         <div class="category-tabs">
             <div class="category-tab active" onclick="filterMenu('all')">All</div>
-            <div class="category-tab" onclick="filterMenu('bestsellers')">Bestsellers</div>
-            <div class="category-tab" onclick="filterMenu('starters')">Starters</div>
-            <div class="category-tab" onclick="filterMenu('mains')">Main Course</div>
+            <div class="category-tab" onclick="filterMenu('indian')">Indian</div>
+            <div class="category-tab" onclick="filterMenu('chinese')">Chinese</div>
+            <div class="category-tab" onclick="filterMenu('arabian')">Arabian</div>
+            <div class="category-tab" onclick="filterMenu('tandoor')">Tandoor</div>
             <div class="category-tab" onclick="filterMenu('biryani')">Biryani</div>
-            <div class="category-tab" onclick="filterMenu('desserts')">Desserts</div>
         </div>
 
         <div class="menu-grid" id="menuGrid">
@@ -832,13 +869,13 @@
             </div>
             <div class="feature">
                 <i class="fas fa-leaf"></i>
-                <h3>Fresh Daily</h3>
-                <p>Quality ingredients</p>
+                <h3>Since 1969</h3>
+                <p>Traditional taste</p>
             </div>
             <div class="feature">
                 <i class="fas fa-award"></i>
-                <h3>15+ Years</h3>
-                <p>Trusted by locals</p>
+                <h3>4 Cuisines</h3>
+                <p>Indian • Chinese • Arabian • Tandoor</p>
             </div>
             <div class="feature">
                 <i class="fas fa-smile"></i>
@@ -849,7 +886,7 @@
     </section>
 
     <!-- Footer -->
-    <footer style="margin-bottom: 60px;">
+    <footer>
         <div class="footer-info">
             <h3>Bava's Restaurant</h3>
             <p>📍 R4XV+H26, Agaramthen<br>Tamil Nadu 600127</p>
@@ -916,20 +953,114 @@
     </a>
 
     <script>
-        // Menu Data
+        // Menu Data with cuisine types
         const menuItems = [
-            // Bestsellers
+            // Indian
             {
                 id: 1,
-                name: 'Special Dosa',
-                category: 'bestsellers',
-                price: 80,
-                description: 'Crispy dosa with special masala',
+                name: 'Masala Dosa',
+                category: 'indian',
+                price: 90,
+                description: 'Crispy dosa with potato masala',
                 image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300',
                 bestseller: true
             },
             {
                 id: 2,
+                name: 'Idli Sambar',
+                category: 'indian',
+                price: 60,
+                description: 'Soft steamed rice cakes',
+                image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300'
+            },
+            {
+                id: 3,
+                name: 'Chettinad Chicken',
+                category: 'indian',
+                price: 280,
+                description: 'Spicy Chettinad style curry',
+                image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=300'
+            },
+            // Chinese
+            {
+                id: 4,
+                name: 'Chicken Manchurian',
+                category: 'chinese',
+                price: 220,
+                description: 'Indo-Chinese chicken in tangy sauce',
+                image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?w=300'
+            },
+            {
+                id: 5,
+                name: 'Veg Fried Rice',
+                category: 'chinese',
+                price: 160,
+                description: 'Wok-tossed rice with vegetables',
+                image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=300'
+            },
+            {
+                id: 6,
+                name: 'Hakka Noodles',
+                category: 'chinese',
+                price: 180,
+                description: 'Stir-fried noodles Chinese style',
+                image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300'
+            },
+            // Arabian
+            {
+                id: 7,
+                name: 'Shawarma Plate',
+                category: 'arabian',
+                price: 250,
+                description: 'Grilled meat with pita and hummus',
+                image: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=300'
+            },
+            {
+                id: 8,
+                name: 'Arabic Grilled Chicken',
+                category: 'arabian',
+                price: 320,
+                description: 'Marinated grilled chicken with rice',
+                image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300',
+                bestseller: true
+            },
+            {
+                id: 9,
+                name: 'Falafel Wrap',
+                category: 'arabian',
+                price: 180,
+                description: 'Crispy falafel in pita bread',
+                image: 'https://images.unsplash.com/photo-1547444632-d4280d8d5384?w=300'
+            },
+            // Tandoor
+            {
+                id: 10,
+                name: 'Tandoori Chicken',
+                category: 'tandoor',
+                price: 280,
+                description: 'Clay oven roasted chicken',
+                image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300',
+                bestseller: true
+            },
+            {
+                id: 11,
+                name: 'Paneer Tikka',
+                category: 'tandoor',
+                price: 220,
+                description: 'Grilled cottage cheese cubes',
+                image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300'
+            },
+            {
+                id: 12,
+                name: 'Seekh Kebab',
+                category: 'tandoor',
+                price: 260,
+                description: 'Minced meat kebabs',
+                image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=300'
+            },
+            // Biryani
+            {
+                id: 13,
                 name: 'Chicken Biryani',
                 category: 'biryani',
                 price: 220,
@@ -937,97 +1068,21 @@
                 image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=300',
                 bestseller: true
             },
-            // Starters
             {
-                id: 3,
-                name: 'Idli (3 pcs)',
-                category: 'starters',
-                price: 40,
-                description: 'Soft steamed rice cakes',
-                image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300'
-            },
-            {
-                id: 4,
-                name: 'Medu Vada',
-                category: 'starters',
-                price: 50,
-                description: 'Crispy lentil donuts',
-                image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?w=300'
-            },
-            {
-                id: 5,
-                name: 'Paneer 65',
-                category: 'starters',
-                price: 150,
-                description: 'Spicy fried paneer cubes',
-                image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300'
-            },
-            // Main Course
-            {
-                id: 6,
-                name: 'Masala Dosa',
-                category: 'mains',
-                price: 90,
-                description: 'Crispy dosa with potato filling',
-                image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300'
-            },
-            {
-                id: 7,
-                name: 'Chettinad Chicken',
-                category: 'mains',
-                price: 280,
-                description: 'Spicy Chettinad style chicken curry',
-                image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=300'
-            },
-            {
-                id: 8,
-                name: 'Paneer Butter Masala',
-                category: 'mains',
-                price: 220,
-                description: 'Rich creamy paneer curry',
-                image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=300'
-            },
-            {
-                id: 9,
-                name: 'Veg Fried Rice',
-                category: 'mains',
-                price: 140,
-                description: 'Wok-tossed rice with vegetables',
-                image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=300'
-            },
-            // Biryani
-            {
-                id: 10,
+                id: 14,
                 name: 'Mutton Biryani',
                 category: 'biryani',
                 price: 280,
                 description: 'Fragrant rice with tender mutton',
-                image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=300'
+                image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300'
             },
             {
-                id: 11,
+                id: 15,
                 name: 'Veg Biryani',
                 category: 'biryani',
-                price: 160,
+                price: 180,
                 description: 'Aromatic rice with mixed vegetables',
                 image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=300'
-            },
-            // Desserts
-            {
-                id: 12,
-                name: 'Gulab Jamun',
-                category: 'desserts',
-                price: 60,
-                description: 'Sweet milk dumplings',
-                image: 'https://images.unsplash.com/photo-1666190092323-354d0816e95f?w=300'
-            },
-            {
-                id: 13,
-                name: 'Rasmalai',
-                category: 'desserts',
-                price: 80,
-                description: 'Soft cheese in sweet milk',
-                image: 'https://images.unsplash.com/photo-1609501676063-e7fb0a56e31e?w=300'
             }
         ];
 
@@ -1045,7 +1100,6 @@
             currentCategory = category;
             const menuGrid = document.getElementById('menuGrid');
             let filtered = category === 'all' ? menuItems : 
-                          category === 'bestsellers' ? menuItems.filter(item => item.bestseller) :
                           menuItems.filter(item => item.category === category);
             
             menuGrid.innerHTML = filtered.map(item => `
